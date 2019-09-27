@@ -1,0 +1,18 @@
+<h1>Burgers!</h1>
+
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+      <h2>{{name}}</h2> - Is eaten:{{devoured}}
+      <button class="eat-burger" data-status={{this.devoured}} data-id="{{this.id}}">Eat Da Burger!</button>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+      <h2>{{name}}</h2> - Is eaten:{{devoured}}
+    {{/if}}
+  {{/each}}
+</ul>
