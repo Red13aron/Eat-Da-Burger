@@ -10,13 +10,14 @@ document.querySelectorAll(".eat-burger").forEach(element => {
 
     element.setAttribute("data-status", "true");
     const newDevouredState = {
-      id: element.data("id"),
-      devoured: true
+      id: element.getAttribute("data-id"),
+      devoured: 1
     }
 
-    axios.post('/api/burgers', JSON.parse(newDevouredState))
+    axios.put('/api/burgers', newDevouredState)
       .then(function (res) {
         console.log(res);
+        window.location.reload();
       })
       .catch(function (err) {
         console.log(err);
